@@ -70,7 +70,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Food & Fast Food</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit Rem reiciendis quaerat magnam exercitationem.</p>
-                    <a href="http://localhost:8080/php/2021-basic-php-project-sinetsem/?page=Food" class="btn btn-primary">Show More</a>
+                    <a href="http://localhost:8080/php/2021-php-project-sinetsem/?page=Food" class="btn btn-primary">Show More</a>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Desert</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit Rem reiciendis quaerat magnam exercitationem.</p>
-                    <a href="http://localhost:8080/php/2021-basic-php-project-sinetsem/?page=desert" class="btn btn-primary">Show More</a>
+                    <a href="http://localhost:8080/php/2021-php-project-sinetsem/?page=desert" class="btn btn-primary">Show More</a>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Soft Drink</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit Rem reiciendis quaerat magnam exercitationem.</p>
-                    <a href="http://localhost:8080/php/2021-basic-php-project-sinetsem/?page=Soft_drink" class="btn btn-primary">Show More</a>
+                    <a href="http://localhost:8080/php/2021-php-project-sinetsem/?page=Soft_drink" class="btn btn-primary">Show More</a>
                 </div>
             </div>
         </div>
@@ -101,32 +101,54 @@
 <div class="container pl-5 pr-5 mb-4 pt-3">
     <div class="row">
         <?php 
+            $products="";
             require_once('database/database.php');
-            if($_SERVER['REQUEST_METHOD']=='POST'):
+            if($_SERVER['REQUEST_METHOD']=='POST'){
                 $products=getAllproduct($_POST);
-                foreach($products as $product):
+            }else{
+                $products=getPost();
+            }
+            foreach($products as $product):
             
             
         ?>
         <div class="col-3 mb-3">
             <div class="card-group">
                 <div class="card">
-                    <img class="card-img-top" src="<?= $product['profile'] ?>" alt="Card image cap" width="100%" height="150px">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $product['productName'] ?></h5>
+                    
+                    <div class="card-header btn btn-light">
+                        <a href="read_more/detail.php?id=<?= $product['product_id'] ?>">
+                            <h5 class="text-center"><?= $product['productName'] ?></h5>
+                        </a>
                         
                     </div>
-                    <div class="card-footer bg-success">
-                        <span class="text-white d-flex justify-content-center">Price: <?= $product['price'] ?>$</span>
                     
-                    </div>
                 </div>
             </div>
         </div>
         <?php endforeach ; ?>
-        <?php endif; ?>
+       
     </div>
+    <div class="">
+        <ul class="d-flex justify-content-center list-unstyled">
+            <?php
+                $page=getTotalpage();
+                for($i=1 ; $i<=$page+1; $i++):
+            ?>
+            
+            <li class=""><a class="btn btn-secondary mr-3 mt-4 rounded-circle" href="?page_show=<?= $i?>"><?= $i ?></a></li>
+            
+            <?php endfor ;?>
+        </ul>
+         
+    </div>    
 </div>
+
+<?php 
+    require_once('partial/footer.php');
+?>
+
+
 
 
 

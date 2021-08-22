@@ -23,7 +23,7 @@
             <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus illum sunt quisquam harum reprehenderit totam doloribus numquam asperiores repellat dolorem?</p>
 
         </div>
-        <img class="border border-light " width="60%" height="400px" src="https://lh3.googleusercontent.com/proxy/q2f33FzMjVmnIxBLVe7PM5yPXrI2Gtgx3dZ6ujnWAZryuzu-33JfgppAlxeWb1sHM4yKyv5bLcweyTgyVTF3s8pXIV_QuQvBzWrkG0_FddG3QWENSDRuhbxnBY5aS_shj-89zVvXHQ" alt="">
+        <img class="border border-light " width="60%" height="400px" src="https://businesspost.ng/wp-content/uploads/2019/08/Orange-Fruit-Juice.jpg" alt="">
     </div>
     <br>
     <hr>
@@ -60,10 +60,10 @@
         ?>
         <div class="col-4">
             <div class="shadow rounded mb-4">
-                <img src="<?= $softDrinnk['profile'] ?>" width="100%" height="250" class="pl-3 pr-3 pt-3">
-                <p class="action d-flex justify-content-end pr-3"><?= $softDrinnk['public_date'] ?></p>
+                <img src="assets/images/<?= $softDrinnk['profile'] ?>" width="100%" height="250" class="pl-3 pr-3 pt-3">
+               
                 
-                <div class="pl-3 pr-3 pb-3">
+                <div class="pl-3 pr-3 pb-3 mt-2">
                     <div class="d-flex justify-content-between">
                     <h4><?= $softDrinnk['productName'] ?></h4>
                
@@ -89,3 +89,7 @@
     
   </div>
 </div>
+
+<?php 
+    require_once('partial/footer.php');
+?>

@@ -15,7 +15,7 @@
         $products = selectOneProduct($id);
         foreach($products as $product):
     ?>
-        <form action="update_product_model.php" method="post">
+        <form action="update_product_model.php" method="post" enctype="multipart/form-data">
         <input type="hidden" value="<?= $product['product_id'] ?>" name="pro_id">
         <input type="hidden" value="<?= $page ?>" name="page">
         <div class="form-group">

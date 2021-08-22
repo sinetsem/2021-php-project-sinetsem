@@ -12,6 +12,7 @@
             </div>
         </div>
     </form>
+    
     <div class="d-flex justify-content-end p-2 mb-2 mt-4">
         <a href="process_product/create_product_html.php?page=<?= $_GET['page'] ?>" class="btn btn-primary">Add Product +</a>
     </div>
@@ -60,10 +61,9 @@
            
             <div class="card shadow mb-4">
             
-                <img src="<?= $desert['profile'] ?>" class="card-img-top" width="100%" height="200" >
+                <img src="assets/images/<?= $desert['profile'] ?>" class="card-img-top" width="100%" height="200" >
                 
-                <p class="action d-flex justify-content-end"><?= $desert['public_date'] ?></p>
-                <div class="ml-3 mr-3">
+                <div class="ml-3 mr-3 mt-2">
                     <h5 class=""><?= $desert['productName'] ?></h5>
                     <p><?= $description ?>...<a href="read_more/detail.php?id= <?= $desert['product_id'] ?>" class="btn btn-light btn-sm text-primary">Readmore</a></p> 
                 </div>
@@ -82,3 +82,6 @@
         <?php endforeach; ?>
     </div>
 </div>
+<?php 
+    require_once('partial/footer.php');
+?>

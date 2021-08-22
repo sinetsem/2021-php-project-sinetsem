@@ -1,7 +1,5 @@
 <?php
-    require_once('partial/header.php');
-    require_once('partial/navbar.php');
-    
+   
     if(isset($_GET['page'])){
 
         if($_GET['page']=='Food'){
@@ -13,10 +11,13 @@
         }elseif($_GET['page']=='about'){
             include_once('pages/about.php');
         }
+        elseif($_GET['page']=='account'){
+            include_once('pages/account.php');
+        }
         else{
             include_once('pages/home.php');
         }
     }else{
         include_once('pages/home.php');
     }
-    require_once('partial/footer.php');
+    

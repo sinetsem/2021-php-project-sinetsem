@@ -1,6 +1,7 @@
 <?php 
     require_once('partial/header.php');
     require_once('partial/navbar.php');
+    
 ?>
 
 <div class="container p-4 ">
@@ -13,9 +14,11 @@
             </div>
         </div>
     </form>
+    
     <div class="d-flex justify-content-end p-2 mb-2 mt-4">
         <a href="process_product/create_product_html.php?page=<?= $_GET['page'] ?>" class="btn btn-primary">Add Product +</a>
     </div>
+    
     <div class="d-flex  bg-light shadow ">
         <div class="m-5 pt-5">
             <h4 class="text-center" >Food & Fast Food</h4>
@@ -43,7 +46,7 @@
     
     <hr>
     
-    <div class="row">
+    <div class="row mt-4">
         <?php
             require_once('database/database.php');
             $products='';
@@ -63,10 +66,9 @@
         ?>
         <div class="col-4">
             <div class="shadow rounded mb-4">
-                <img src="<?= $food['profile'] ?>" width="100%" height="250" class="pl-3 pr-3 pt-3">
-                <p class="action d-flex justify-content-end pr-3"><?= $food['public_date'] ?></p>
+                <img src="assets/images/<?= $food['profile'] ?>" width="100%" height="250" class="pl-3 pr-3 pt-3">
                 
-                <div class="pl-3 pr-3 pb-3">
+                <div class="pl-3 pr-3 pb-3 mt-2">
                     <div class="d-flex justify-content-between">
                     <h4><?= $food['productName'] ?></h4>
                
@@ -88,7 +90,12 @@
      
         </div>
         
+        
         <?php endforeach; ?>
     
-  </div>
+    </div>
+    
 </div>
+<?php 
+    require_once('partial/footer.php');
+?>

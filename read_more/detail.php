@@ -25,10 +25,10 @@
     <div class="row">
         <div class="col-12">
             <div class=" mr-3 shadow">
-                <img  width="100%" height="500" src="<?= $product['profile'] ?>" >
+                <img  width="100%" height="500" src="../assets/images/<?= $product['profile'] ?>" >
                                 
             </div>
-            <div class="">
+            <div class="mt-2">
                        
                 <h1 class="display-4">Name:<?= $product['productName'] ?> </h1>
                 <p>Date: <?= $product['public_date'] ?></p>
@@ -60,16 +60,16 @@
     if(isset($_GET['page'])){
 
         if($_GET['page']=='Food'){
-            header('Location: http://localhost:8080/php/2021-basic-php-project-sinetsem/?page=Food');
+            header('Location: http://localhost:8080/php/2021-php-project-sinetsem/?page=Food');
         }elseif($_GET['page']=='Soft_drink'){
-            header('Location: http://localhost:8080/php/2021-basic-php-project-sinetsem/?page=Soft_drink');
+            header('Location: http://localhost:8080/php/2021-php-project-sinetsem/?page=Soft_drink');
         }elseif($_GET['page']=='desert'){
-            header('Location: http://localhost:8080/php/2021-basic-php-project-sinetsem/?page=desert');
+            header('Location: http://localhost:8080/php/2021-php-project-sinetsem/?page=desert');
         }elseif($_GET['page']=='about'){
-            header('Location: http://localhost:8080/php/2021-basic-php-project-sinetsem/?page=about');
+            header('Location: http://localhost:8080/php/2021-php-project-sinetsem/?page=about');
         }
         else{
-            header('Location: http://localhost:8080/php/2021-basic-php-project-sinetsem/?page=home');
+            header('Location: http://localhost:8080/php/2021-php-project-sinetsem/?page=home');
         }
     }
     require_once('../partial/footer.php');

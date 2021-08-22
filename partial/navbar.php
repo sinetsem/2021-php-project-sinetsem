@@ -30,7 +30,7 @@
     </ul>
     <ul class="navbar-nav ml-5">
       <li class="nav-item active ml-5">
-        <a class="nav-link text-white" href="?page=logout">LOGIN</a>
+        <a class="nav-link text-white" href="?page=account">ACCOUNT</a>
       </li>
     </ul>   
   </div>
