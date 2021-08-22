@@ -41,7 +41,7 @@
         <input type="submit" value="submit" name="select" />
     </form>
     <hr>
-    <div class="row">
+    <div class="row mt-4">
         <?php 
             require_once("database/database.php");
             $products='';
